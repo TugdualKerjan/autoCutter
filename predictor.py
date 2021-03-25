@@ -16,7 +16,7 @@ from detectron2.data import MetadataCatalog, DatasetCatalog
 # from vovnet import add_vovnet_config
 # model = "vovnet-detectron2/configs/mask_rcnn_V_19_FPNLite_3x.yaml"
 # model = "https://dl.dropbox.com/s/rptgw6stppbiw1u/vovnet19_ese_detectron2.pth"
-model = "COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x.yaml"
+model = "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
 
 
 cfg = get_cfg()
