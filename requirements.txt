@@ -1,4 +1,4 @@
 opencv-python==4.5.1.48
 python-telegram-bot==13.4.1
-torch==1.8.0+cpu
+https://download.pytorch.org/whl/cpu/torch-1.8.0-cp39-cp39-manylinux2014_aarch64.whl
 torchvision==0.8.2+cpu
