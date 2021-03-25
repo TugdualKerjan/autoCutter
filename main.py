@@ -7,13 +7,10 @@ from telegram.ext import CommandHandler, MessageHandler, Updater, Filters, Callb
 from telegram.error import NetworkError, Unauthorized
 import numpy as np
 from io import BytesIO
-import os, psutil
-from guppy import hpy
+# from guppy import hpy
 
-h = hpy()
+# h = hpy()
 
-
-process = psutil.Process(os.getpid())
 updater = Updater(token='1607764973:AAHe1HbFf1JWYBUQUlPshRoOuUNng0fObvw', use_context=True)
 
 def resize(image):
@@ -41,7 +38,7 @@ def receive_stickers(update, context):
     context.bot.deleteStickerFromSet(update.message.sticker['file_id'])
 
 def receive_images(update, context):
-    print (h.heap())
+    # print (h.heap())
 
     # print("MEM (MB): " + str(int(process.memory_info().rss/1000000)))
     user_id = int(update.message.from_user['id'])
@@ -64,7 +61,7 @@ def receive_images(update, context):
             # print("Can't find sticker pack")
             context.bot.createNewStickerSet(user_id, name="pepites_de_%s_by_faststicker_bot" % username, title="PepitesDe%s" % username, png_sticker=buffer, emojis="🙂")
     context.bot.sendMessage(update.effective_chat.id, "Get your stickers at t.me/addstickers/pepites_de_%s_by_faststicker_bot" % username)
-    print (h.heap())
+    # print (h.heap())
 
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
