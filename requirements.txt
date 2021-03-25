@@ -3,4 +3,3 @@ https://download.pytorch.org/whl/cpu/torch-1.7.1%2Bcpu-cp36-cp36m-linux_x86_64.w
 opencv-python==4.5.1.48
 https://download.pytorch.org/whl/cpu/torchvision-0.8.2%2Bcpu-cp36-cp36m-linux_x86_64.whl
 python-telegram-bot==13.4.1
-./detectron2
