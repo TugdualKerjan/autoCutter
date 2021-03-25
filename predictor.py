@@ -13,19 +13,20 @@ from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
 from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog, DatasetCatalog
-# from vovnet import add_vovnet_config
+from vovnet import add_vovnet_config
 # model = "vovnet-detectron2/configs/mask_rcnn_V_19_FPNLite_3x.yaml"
-model = "COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml"
-# model = "https://dl.dropbox.com/s/rptgw6stppbiw1u/vovnet19_ese_detectron2.pth"
+# model = "COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml"
+modelconf = "https://raw.githubusercontent.com/youngwanLEE/vovnet-detectron2/master/configs/mask_rcnn_V_39_FPN_3x.yaml"
+model = "https://dl.dropbox.com/s/c5o3yr6lwrb1170/mask_V_39_eSE_ms_3x.pth"
 
 
 cfg = get_cfg()
-# add_vovnet_config(cfg)
+add_vovnet_config(cfg)
 # cfg.merge_from_file(model)
-cfg.merge_from_file(model_zoo.get_config_file(model))
+cfg.merge_from_file("configs/mask_rcnn_V_39_FPN_3x.yaml")
 
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
-cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url(model)
+cfg.MODEL.WEIGHTS = model
 cfg.MODEL.DEVICE = "cpu"
 
 predictor = DefaultPredictor(cfg)
