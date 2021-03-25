@@ -5,7 +5,7 @@ FROM python:3.7
 WORKDIR /code
 
 # copy the dependencies file to the working directory
-COPY requirements.txt .
+COPY aaa.txt requirements.txt
 
 # install dependencies
 RUN pip install -r requirements.txt
