@@ -9,7 +9,6 @@ import numpy as np
 import os
 from io import BytesIO
 token = os.environ['TOKEN']
-# token = '1766841498:AAG2lGoMoVbMEFzIJv3mEneMDppXo0h5RTc'
 updater = Updater(token=token, use_context=True)
 
 def resize(image):
