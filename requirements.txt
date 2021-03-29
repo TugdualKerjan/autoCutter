@@ -3,4 +3,4 @@ https://download.pytorch.org/whl/cpu/torch-1.7.1%2Bcpu-cp36-cp36m-linux_x86_64.w
 https://download.pytorch.org/whl/cpu/torchvision-0.8.2%2Bcpu-cp36-cp36m-linux_x86_64.whl
 python-telegram-bot==13.4.1
 opencv-contrib-python-headless==4.5.1.48
-boto==2.49.0
+boto3
