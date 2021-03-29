@@ -9,8 +9,8 @@ import numpy as np
 import os
 from io import BytesIO
 from boto.s3.connection import S3Connection
-# token = S3Connection(os.environ['TOKEN'])
-token = '1766841498:AAG2lGoMoVbMEFzIJv3mEneMDppXo0h5RTc'
+token = S3Connection(os.environ['TOKEN'])
+# token = '1766841498:AAG2lGoMoVbMEFzIJv3mEneMDppXo0h5RTc'
 updater = Updater(token=token, use_context=True)
 
 def resize(image):
@@ -49,11 +49,11 @@ def receive_images(update, context):
         subimage = resize(subimage)
         buffer = cv2.imencode(".png", subimage)[1].tobytes()
         try: 
-            context.bot.add_sticker_to_set(user_id, name="pepites_de_%s_by_sticker_speedrunner_bot" % username, emojis="🧮", png_sticker=buffer)
+            context.bot.add_sticker_to_set(user_id, name="pepites_de_%s_by_stickerspeedrunner_bot" % username, emojis="🧮", png_sticker=buffer)
         except:
-            context.bot.createNewStickerSet(user_id, name="pepites_de_%s_by_sticker_speedrunner_bot" % username, title="PepitesDe%s" % username, png_sticker=buffer, emojis="🙂")
+            context.bot.createNewStickerSet(user_id, name="pepites_de_%s_by_stickerspeedrunner_bot" % username, title="PepitesDe%sSticker" % username, png_sticker=buffer, emojis="🙂")
         context.bot.sendSticker(update.effective_chat.id, buffer)
-    context.bot.sendMessage(update.effective_chat.id, "Get your stickers at t.me/addstickers/pepites_de_%s_by_sticker_speedrunner_bot" % username)
+    context.bot.sendMessage(update.effective_chat.id, "Get your stickers at t.me/addstickers/pepites_de_%s_by_stickerspeedrunner_bot" % username)
 
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
