@@ -10,7 +10,7 @@ import os
 from io import BytesIO
 from boto.s3.connection import S3Connection
 token = S3Connection(os.environ['TOKEN'])
-
+token = '1766841498:AAG2lGoMoVbMEFzIJv3mEneMDppXo0h5RTc'
 updater = Updater(token=token, use_context=True)
 
 def resize(image):
