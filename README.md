@@ -10,3 +10,10 @@ Thanks to detectron2 and the python-telegram-bot library one can detect people i
 
 - See the magic happen
 
+## Development:
+
+Around 10h of work to get it to work, mainly understanding how Heroku deals with python packages and adding a build thingy to install lib that was missing for opencv.
+
+- A lot of work to try and get a more efficient and less costly version mask_rcnn using vovnet, unfortunately Heroku still didn't want to go above 500MB limit of memory usage.
+- Lots of work to understand how to generate and add sticker packs that would be personal to each user on the platform.
+- Some attemps made to get it to work using a Dockerfile, which was a success but uploading an image failed, dockerhub is bull for that.

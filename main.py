@@ -6,8 +6,12 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CommandHandler, MessageHandler, Updater, Filters, CallbackQueryHandler
 from telegram.error import NetworkError, Unauthorized
 import numpy as np
+import os
 from io import BytesIO
-updater = Updater(token='1607764973:AAHe1HbFf1JWYBUQUlPshRoOuUNng0fObvw', use_context=True)
+from boto.s3.connection import S3Connection
+token = S3Connection(os.environ['TOKEN'])
+
+updater = Updater(token=token, use_context=True)
 
 def resize(image):
     height, width, _ = image.shape
