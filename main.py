@@ -47,11 +47,11 @@ def receive_images(update, context):
         subimage = resize(subimage)
         buffer = cv2.imencode(".png", subimage)[1].tobytes()
         try: 
-            context.bot.add_sticker_to_set(user_id, name="pepites_de_%s_by_stickerspeedrunner_bot" % username, emojis="🧮", png_sticker=buffer)
+            context.bot.add_sticker_to_set(user_id, name="pepites_de_%s_by_SmartCutterBot" % username, emojis="🧮", png_sticker=buffer)
         except:
-            context.bot.createNewStickerSet(user_id, name="pepites_de_%s_by_stickerspeedrunner_bot" % username, title="PepitesDe%sSticker" % username, png_sticker=buffer, emojis="🙂")
+            context.bot.createNewStickerSet(user_id, name="pepites_de_%s_by_SmartCutterBot" % username, title="PepitesDe%sSticker" % username, png_sticker=buffer, emojis="🙂")
         context.bot.sendSticker(update.effective_chat.id, buffer)
-    context.bot.sendMessage(update.effective_chat.id, "Get your stickers at t.me/addstickers/pepites_de_%s_by_stickerspeedrunner_bot" % username)
+    context.bot.sendMessage(update.effective_chat.id, "Get your stickers at t.me/addstickers/pepites_de_%s_by_SmartCutterBot" % username)
 
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
